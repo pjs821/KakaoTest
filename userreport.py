@@ -31,6 +31,7 @@ def solution(id_list, report, k):
     print("======================================")
 
     #이부분부터 다시 해야함
+    #문제 다시 확인 후 추가할것
     for key in tmp.keys():
         for user in tmp[key]:
             if cnt[id_list.index(user)] >= k:
