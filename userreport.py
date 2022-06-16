@@ -6,15 +6,8 @@ def solution(id_list, report, k):
     for i in range(0,len(id_list)):
         tmp[id_list[i]] = [];
 
-    print("tmp: ", tmp)    
-
     #report 중복 신고 제거
     report = set(report)
-    print("report Ready...")
-
-
-
-
 
     #for문을 통한 신고 횟수 카운트
     for re in report:
@@ -27,19 +20,14 @@ def solution(id_list, report, k):
             if result[1] == id_list[i]:
                 cnt[i] += 1
         
-    print("tmp:", tmp)
-    print("======================================")
-
-    #이부분부터 다시 해야함
-    #문제 다시 확인 후 추가할것
-    for key in tmp.keys():
+    for key in  tmp.keys():
         for user in tmp[key]:
+            ind = id_list.index(user)
+            print("user:", user)
+            print("index:", ind)
             if cnt[id_list.index(user)] >= k:
-                answer[id_list.index(user)] += 1
+                answer[id_list.index(key)] += 1
 
-    print("id_list : ", id_list)
-    #return answer
-    #[2,1,1,0]
     return answer
 
 
